@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excersice 2: Intermediate</title>
-    <script src="./main.js"></script>
+    <title>Excersice 2</title>
 </head>
 <body>
-    <h1><center>Know Me</center></h1>
-    <button onclick ="update()"><center>Information</center></button>
+    <h1><center>User Information</center></h1>
+    <button onclick="addUserInfo()">Click</button>
+
+    <div id="personTraits"></div>
+
+<script>
+  let information = {
+        name: "Emily",
+        age: "18",
+        job: "student", 
+    };  
+   
+
+    function addUserInfo(person) {
+       let personInfo = document.getElementById("personTraits"); 
+       
+       let userDataElement = document.createElement("div");
+       userDataElement.innerHTML = `
+       <h3>${information.name}</h3>
+       <p>${information.age}</p>
+       <p>${information.job}</p>
+       `; 
+      
+       personInfo.appendChild(userDataElement);
+
+       if(information.name.length <= 5){
+        const bodyColor = document.querySelector("body")
+
+        bodyColor.style.backgroundColor = '#C00C00' 
+       }
+    }
+
+   
+</script>
 </body>
 </html>
